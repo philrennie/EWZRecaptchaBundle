@@ -132,7 +132,7 @@ class IsTrueValidator extends ConstraintValidator
 
     private function getResourceContext()
     {
-        if (null === $this->httpProxy['host'] || null === $this->httpProxy['port']) {
+        if (!isset($this->httpProxy['host']) || null === $this->httpProxy['host'] || null === $this->httpProxy['port']) {
             return null;
         }
 
